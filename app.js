@@ -1,10 +1,23 @@
 const express = require("express");
+const RateLimit = require('express-rate-limit');
 const users = require("./data/userData");
 const {html,oneUser,updateUser,deleteUser,createUser,} = require("./controllers/controllers");
 const app = express();
 
+
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
+
+
+// Set up rate limiter: maximum of 100 requests per 15 minutes
+const limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, 
+  max: 100, 
+});
+// apply rate limiter to all requests
+app.use(limiter);
+
+
 
 app.get("/", (req, res) => {
   const userLink = `<a href="/api/users">click here</a>`;

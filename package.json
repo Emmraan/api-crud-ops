@@ -1,5 +1,5 @@
 {
-  "name": "api-test",
+  "name": "opscrud",
   "version": "1.0.0",
   "description": "This repository contains a RESTful API service for performing CRUD (Create, Read, Update, Delete) operations on data. Built using Express.js, it provides a flexible and efficient solution for managing data through a simple and intuitive interface.",
   "main": "index.js",
@@ -8,11 +8,14 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["api","crud","test"],
+  "author": "Emran",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.0"
   }
 }

@@ -5,8 +5,8 @@
 ## Dependencies
 
 [![Express.js](https://img.shields.io/badge/Express.js-%5E4.19.2-white)](https://expressjs.com/)
-
 [![nodemon](https://img.shields.io/badge/Nodemon-%5E3.1.0-green)](https://www.npmjs.com/package/nodemon)
+[![express-rate-limit](https://img.shields.io/badge/express--rate--limit-%5E7.2.0-blue)](https://www.npmjs.com/package/express-rate-limit)
 
 
 
@@ -14,16 +14,19 @@
 ## Installation
 
 1. Clone this repository to your local machine.
-``` bash
+
+```bash
 git clone https://github.com/Emmraan/api-crud-ops.git
+
 ```
 2. Navigate to the project directory.
-```
+
+```bash
 cd  api-crud-ops
 ```
 3. Install dependencies using npm:
 
-```
+```bash
 npm  install
 ```
 
