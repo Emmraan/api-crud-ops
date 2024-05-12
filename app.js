@@ -8,6 +8,8 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
+// Set trust proxy to only trust requests from localhost
+app.set('trust proxy', 'loopback');
 
 // Set up rate limiter: maximum of 100 requests per 15 minutes
 const limiter = RateLimit({
