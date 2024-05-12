@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update The User</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %> 
+    <%- include('partials/PhoneMenu') %>
+    <div
+      class="form-div w-full h-screen flex justify-center items-center text-white py-10 bg-slate-950 z-50"
+    >
+      <div class="gooey absolute"></div>
+
+      <form
+        action="/api/user/update"
+        method="post"
+        class="relative w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[40%] 2xl:w-[30%] max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto flex flex-col items-center gap-5 mt-20 py-8 px-4 rounded-md border border-1 border-white z-9"
+      >
+        <input
+          class="readonly hidden outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium cursor-not-allowed"
+          type="text"
+          autocomplete="off"
+          name="userId"
+          id="userIdInput"
+          value="<%=user.id%>"
+          required="true"
+        />
+        <h1>First Name</h1>
+        <input
+          class="required outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium"
+          type="text"
+          placeholder="Enter your name"
+          autocomplete="off"
+          name="first_name"
+          value="<%=user.first_name%>"
+          required="true"
+        />
+        <h1>Last Name</h1>
+        <input
+          class="required outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium"
+          type="text"
+          placeholder="Enter your last_name"
+          autocomplete="off"
+          name="last_name"
+          value="<%=user.last_name%>"
+          required="true"
+        />
+        <h1>Email</h1>
+        <input
+          class="required outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium"
+          type="email"
+          placeholder="Enter your email"
+          autocomplete="off"
+          name="email"
+          value="<%=user.email%>"
+          required="true"
+        />
+        <input
+          class="readonly hidden outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium cursor-not-allowed"
+          type="text"
+          name="gender"
+          value="<%=user.gender%>"
+          required="true"
+        />
+        <h1>Job Title</h1>
+        <input
+          class="required outline-none text-black w-full sm:w-[80%] py-2 px-3 rounded-md placeholder:text-black font-medium"
+          type="text"
+          placeholder="Enter your job_title"
+          autocomplete="off"
+          name="job_title"
+          value="<%=user.job_title%>"
+          required="true"
+        />
+        <button
+          type="submit"
+          class="text-black py-2 px-6 cursor-pointer rounded-md font-medium bg-white"
+        >
+          UpdateUser
+        </button>
+      </form>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

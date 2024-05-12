@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  color: #080a18;
+  background: #18c7df;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  padding: 0vw 2.4vw;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+.totalUsers {
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+form {
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.left a:hover {
+  border-radius: 8px;
+  box-shadow: #ffffff 0px 0px 8px 8px;
+}
+.right i:hover {
+  color: #ffffffb7;
+  box-shadow: #ffffff 0px 0px 8px 8px;
+}
+.gooey {
+  width: 47vw;
+  height: 26vw;
+  pointer-events: none;
+  background: linear-gradient(to right, #a80765, cyan);
+  filter: blur(150px);
+  transform: rotate(30deg);
+  opacity: 0.5;
+}
+.menu {
+  display: none;
+}
+.menu-list {
+  display: none;
+  width: 75vw;
+  height: 72vh;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 3%;
+  left: -90%;
+  z-index: 9;
+  transition: all ease-in-out 0.5s;
+}
+.menu-child {
+  text-decoration: underline;
+}
+
+.heading {
+  padding: 15vw 0vw;
+}
+
+/* Customize scrollbar */
+.users-div::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+.users-div::-webkit-scrollbar-thumb {
+  background-color: #309ffa; /* Set the color of the scrollbar thumb */
+  border-radius: 5px; /* Set the border radius to make it circular */
+}
+
+.users-div::-webkit-scrollbar-track {
+  background-color: #060513; /* Set the color of the scrollbar track */
+}
+
+.users-div {
+  padding: 8vw 0vw;
+}
+.not-found {
+  font-size: 4vw;
+}
+
+
+/* #################################### RSPONSIVE CODE HERE ############################### */
+@media (max-width: 861px) {
+  .totalUsers {
+    top: 2%;
+  }
+  .totalUsers h1{
+    font-size: 3vw;
+  }
+  .not-found {
+    font-size: 3.3vw;
+  }
+  .users-div {
+    padding: 8vw 0vw;
+  }
+  .users-div::-webkit-scrollbar {
+    width: 0px; /* Set the width of the scrollbar */
+  }
+
+  nav a {
+    display: none;
+  }
+  nav {
+    padding: 0vw 2.3vw;
+  }
+  .menu {
+    color: #ffffff;
+    display: block;
+  }
+  .menu-list {
+    display: block;
+  }
+  .gooey {
+    top: 20%;
+    width: 70vw;
+    height: 70vw;
+    filter: blur(125px);
+    opacity: 1;
+  }
+  .heading {
+    padding: 25vw 0vw;
+  }
+  .heading h1 {
+    font-size: 7.3vw;
+  }
+  .heading p {
+    font-size: 1rem;
+    width: 92%;
+    line-height: 2.2;
+  }
+  .started {
+    font-size: 4vw;
+  }
+}

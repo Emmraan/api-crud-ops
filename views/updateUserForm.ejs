@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a User For Update</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <%- include('partials/PhoneMenu') %>
+    <div
+      class="form-div w-full h-screen flex flex-col justify-center items-center text-white py-10 bg-slate-950 z-50"
+    >
+      <div class="gooey absolute"></div>
+
+      <h1
+        class="text-black text-3xl px-3 py-2 rounded-md bg-white font-medium z-0"
+      >
+        Enter The id for find The User And Update It
+      </h1>
+      <form
+        action="/api/user/read/update"
+        method="post"
+        class="relative w-80 md:w-1/2 lg:w-1/3 h-auto md:h-32 flex flex-col items-center gap-4 mt-10 md:mt-20 py-4 rounded-md border border-1 border-white z-9"
+      >
+        <input
+          class="outline-none text-black w-1/2 py-1 px-3 rounded-md placeholder:text-black font-medium"
+          type="text"
+          placeholder="Enter your id"
+          required="true"
+          autocomplete="off"
+          name="userId"
+        />
+        <button
+          type="submit"
+          class="text-black py-2 px-6 cursor-pointer rounded-md font-medium bg-white"
+        >
+          Find User
+        </button>
+      </form>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

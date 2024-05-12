@@ -1,44 +1,46 @@
 const fs = require("fs");
-// const da = require("../data/userData.json")
-function createUser(req, res, users) {
+const users = require("../data/userData.json");
+
+function createUser(req, res) {
   const { first_name, last_name, email, gender, job_title } = req.body;
 
   // Validate user data
   if (!validateUserData(req.body)) {
-    return res.status(400).send("Invalid user data: Missing fields");
+    return res.render("updateFieldMiss");
   }
 
-  const id = users.length > 0 ? users[users.length - 1].id + 1 : 1;
+  function generateUserID() {
+    const hexChars = '0123456789abcdefghijklMNOPQRSTUVWXYZABCDEFGHIJKLmnopqrstuvwxyz';
+    let id = '';
 
-  const newUser = {
-    id,
-    first_name,
-    last_name,
-    email,
-    gender,
-    job_title,
-  };
+    for (let i = 0; i < 12; i++) {
+        id += hexChars.charAt(Math.floor(Math.random() * hexChars.length));
+        if (i === 7) id += '_';
+    }
+    return id;
+}
 
-  users.push(newUser);
+const id = generateUserID();
 
-  // Write the updated user data back to the JSON file
+  const user = {id,first_name,last_name,email,gender,job_title,};
+
+  users.push(user);
+
   fs.writeFileSync("./data/userData.json", JSON.stringify(users));
 
-  // Send the newly created user as the response
-  res.status(201).json(newUser);
-  console.log(newUser);
+  res.render("showCreatedUserDets",{user});
+  console.log(user);
 }
 
 function validateUserData(userData) {
-  const requiredFields = [
-    "first_name",
-    "last_name",
-    "email",
-    "gender",
-    "job_title",
-  ];
+  const requiredFields = ["first_name","last_name","email","gender","job_title",];
+  
+  if (userData["gender"] === "none" || userData["gender"] === undefined) {
+  return false;
+}
+
   return requiredFields.every(
-    (field) => userData[field] !== undefined && userData[field].trim() !== ""
+    (field) => userData[field] !== undefined &&  userData[field].trim() !== ""
   );
 }
 

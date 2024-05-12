@@ -1,13 +1,13 @@
-const html = require("./readUsers");
-const oneUser = require("./readOneUser");
-const updateUser = require("./updateUser");
-const deleteUser = require("./deleteUser");
 const createUser = require("./createUser");
+const readOneUser  = require("./readOneUser");
+const updateUser = require("./updateUser");
+const findUserForUpdate = require("./findUserForUpdate");
+const deleteUser = require("./deleteUser");
 
 module.exports = {
-  html,
-  oneUser,
-  updateUser,
-  deleteUser,
   createUser,
+  readOneUser,
+  updateUser,
+  findUserForUpdate,
+  deleteUser,
 };

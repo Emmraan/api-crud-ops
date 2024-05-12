@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 function deleteUser(req, res) {
-  const userId = parseInt(req.params.userId);
+  const userId = req.body.userId;
 
   // Load existing users from the JSON file
   const filePath = path.join(__dirname, "../data/userData.json");
@@ -13,7 +13,7 @@ function deleteUser(req, res) {
 
   // Check if the user with the specified ID exists
   if (userIndex === -1) {
-    return res.status(404).send("User not found");
+    return res.render("user404");
   }
 
   // Remove the user from the array
@@ -21,9 +21,8 @@ function deleteUser(req, res) {
 
   // Write the updated user data back to the JSON file
   fs.writeFileSync(filePath, JSON.stringify(users));
-
-  // Send the deleted user as the response
-  res.json(deletedUser);
+  
+  res.redirect("/api/users")
   console.log(deletedUser);
 }
 

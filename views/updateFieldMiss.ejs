@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Users Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %> 
+    <%- include('partials/PhoneMenu') %>
+    <div
+      class="users-div w-full h-[88vh] gap-[5vw] flex items-center justify-center bg-slate-950 px-10 py-[10vw]"
+    >
+      <div class="gooey absolute"></div>
+
+      <h1
+        class="text-5xl text-slate-950 px-3 flex items-center justify-center py-2 font-bold bg-white rounded-md"
+      >
+        Invalid user data: make sure all fields are filled.
+      </h1>
+    </div>
+    <%- include('partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpsCrud</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %> 
+    <%- include('partials/PhoneMenu') %>
+
+    <div
+      class="hero overflow-hidden text-white w-full h-[100vh] flex justify-center bg-slate-950"
+    >
+      <div class="gooey absolute rounded-full"></div>
+
+      <div
+        class="heading relative z-9 w-[100%] h-[100vh] flex flex-col items-center gap-6"
+      >
+        <h1
+          class="text-5xl text-slate-950 px-3 py-2 font-bold bg-white rounded-md"
+        >
+          Welcome To OPSCRUD!
+        </h1>
+        <p class="text-base font-medium text-zinc-400 w-[70%]">
+          This website contains a RESTful API service for performing CRUD
+          <span class="text-pink-400">(Create, Read, Update, Delete)</span>
+          operations on JSON data. Built using Express.js,
+          <span class="text-cyan-400"
+            >it provides a flexible and efficient</span
+          >
+          solution for managing data through a simple and intuitive interface.
+        </p>
+        <a href="/create/new/user"
+          ><button
+            class="started pointer-events-auto py-3 px-5 text-slate-950 bg-white font-medium rounded-md hover:bg-cyan-500 hover:text-slate-950"
+          >
+            Get Started
+          </button></a
+        >
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

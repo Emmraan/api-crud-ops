@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Users Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar') %> 
+    <%- include('partials/PhoneMenu') %>
+    <div
+      class="users-div w-full h-[90vh] overflow-hidden gap-5 flex flex-col items-center justify-center bg-slate-950 px-8"
+    >
+      <h1
+        class="text-black mt-20 text-3xl px-3 py-2 rounded-md bg-white font-medium z-0"
+      >
+        User Created SuccessFully...
+      </h1>
+
+      <div
+        class="users-card mt-10 relative bg-black flex justify-between items-center text-white z-10 py-8 border border-zinc-600 rounded-[12px] z-[-0] min-w-[24vw]"
+      >
+        <div class="key flex flex-col gap-5 text-base font-medium px-8">
+          <h1>ID:</h1>
+          <h1>First_Name:</h1>
+          <h1>Last_Name:</h1>
+          <h1>Email:</h1>
+          <h1>Gender:</h1>
+          <h1>Job_Title:</h1>
+        </div>
+        <div class="value flex flex-col gap-5 text-base font-medium px-8">
+          <h1><%=user.id%></h1>
+          <h1><%=user.first_name%></h1>
+          <h1><%=user.last_name%></h1>
+          <h1><%=user.email%></h1>
+          <h1><%=user.gender%></h1>
+          <h1><%=user.job_title%></h1>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
