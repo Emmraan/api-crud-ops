@@ -10,6 +10,11 @@
 
 
 
+# Usage
+#### If you wish to perform CRUD operations using <a href="https://postman.com">POSTMAN</a> follow below given steps...
+
+#### OTHERWISE, switch to the <a href="https://github.com/Emmraan/api-crud-ops/tree/fronted-view">frontend view</a> branch for CRUD operations with a frontend view.
+
 
 ## Installation
 
