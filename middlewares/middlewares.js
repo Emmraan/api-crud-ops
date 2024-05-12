@@ -23,6 +23,9 @@ module.exports = function Middlewares(app) {
   // Set up EJS for rendering
   app.set("view engine", "ejs");
 
+   // Set trust proxy to only trust requests from localhost
+  app.set('trust proxy', 'loopback');
+
   // Use rate limiter
   app.use(limiter);
 };
