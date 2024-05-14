@@ -13,8 +13,45 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <%- include('partials/navbar') %>
-    <%- include('partials/PhoneMenu') %>
+    <nav
+    class="flex fixed z-50 items-center justify-between w-full h-16 text-white font-medium border-b border-gray-600 border-opacity-25">
+  <div class="menu px-1 py-1 text-2xl">
+    <i class="ri-menu-2-line"></i>
+  </div>
+  
+    <div class="left flex gap-10">
+      <a class="px-1 py-1" href="/">HOME</a>
+      <a class="px-1 py-1" href="/api/users">AllUsers</a>
+      <a class="px-1 py-1" href="/create/new/user">CreateNewUser</a>
+      <a class="px-1 py-1" href="/read/a/user">ReadUser</a>
+      <a class="px-1 py-1" href="/update/a/user">UpdateUser</a>
+      <a class="px-1 py-1" href="/delete/a/user">DeleteUser</a>
+    </div>
+
+    <div class="right flex gap-7 ">
+      <a target="_blank" href="https://github.com/Emmraan/api-crud-ops">
+          <i class="ri-github-fill text-2xl"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/md-emran-79302b2b1/">
+          <i class="ri-linkedin-box-fill text-2xl"></i>
+      </a>
+    </div>
+  </nav>
+  <div class="menu-list absolute text-white">
+    <div class="menu-child px-3 z-20 py-[16vw] flex flex-col">
+      <a class="px-1 py-1" href="/">HOME</a>
+      <br />
+      <a class="px-1 py-1" href="/api/users">AllUsers</a>
+      <br />
+      <a class="px-1 py-1" href="/create/new/user">CreateNewUser</a>
+      <br />
+      <a class="px-1 py-1" href="/read/a/user">ReadUser</a>
+      <br />
+      <a class="px-1 py-1" href="/update/a/user">UpdateUser</a>
+      <br />
+      <a class="px-1 py-1" href="/delete/a/user">DeleteUser</a>
+    </div>
+  </div>
     <div
       class="form-div w-full h-screen flex flex-col justify-center items-center text-white py-10 bg-slate-950 z-50"
     >
@@ -47,7 +84,25 @@
       </form>
     </div>
 
-    <%- include('partials/footer') %>
+    <footer
+    class="w-full flex gap-4 justify-center items-center h-24 bg-slate-950 text-white"
+  >
+    <p>
+      &copy; 2024
+      <a href="https://opscrud.onrender.com">opscrud</a>
+    </p>
+    <div class="footer-link right flex gap-4">
+      <a target="_blank" href="https://github.com/Emmraan/api-crud-ops">
+        <i class="ri-github-fill text-2xl"></i>
+      </a>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/md-emran-79302b2b1/"
+      >
+        <i class="ri-linkedin-box-fill text-2xl"></i>
+      </a>
+    </div>
+  </footer>
 
     <script src="/javascripts/script.js"></script>
   </body>
