@@ -1,8 +1,8 @@
 import express from "express";
-import Middlewares from "./middlewares/middlewares";
-import ejsRoutes from "./routes/ejsPagesRoutes";
-import crudRoutes from "./routes/handelingCrudRoutes";
-import route404 from "./routes/404Route";
+import Middlewares from "./middlewares/middlewares.js";
+import ejsRoutes from "./routes/ejsPagesRoutes.js";
+import crudRoutes from "./routes/handelingCrudRoutes.js";
+import route404 from "./routes/404Route.js";
 
 const app = express();
 

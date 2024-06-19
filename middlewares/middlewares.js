@@ -1,10 +1,14 @@
 import express from 'express';
 import RateLimit from 'express-rate-limit';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import path from "path"
 
 // Define middleware functions
 const jsonParser = express.json({ extended: true });
 const urlencodedParser = express.urlencoded({ extended: true });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const staticFiles = express.static(path.join(__dirname, "../public"));
 
 // Set up rate limiter: maximum of 100 requests per 15 minutes
@@ -14,7 +18,7 @@ const limiter = RateLimit({
 });
 
 // Export middleware setup function
-module.exports = function Middlewares(app) {
+const Middlewares = (app) => {
   // Apply middleware to the app
   app.use(jsonParser);
   app.use(urlencodedParser);
@@ -29,3 +33,5 @@ module.exports = function Middlewares(app) {
   // Use rate limiter
   app.use(limiter);
 };
+
+export default Middlewares;

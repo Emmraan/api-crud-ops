@@ -1,8 +1,8 @@
-import createUser from "./createUser";
-import readOneUser from "./readOneUser";
-import updateUser from "./updateUser";
-import findUserForUpdate from "./findUserForUpdate";
-import deleteUser from "./deleteUser";
+import createUser from "./createUser.js";
+import readOneUser from "./readOneUser.js";
+import updateUser from "./updateUser.js";
+import findUserForUpdate from "./findUserForUpdate.js";
+import deleteUser from "./deleteUser.js";
 
 export default {
   createUser,

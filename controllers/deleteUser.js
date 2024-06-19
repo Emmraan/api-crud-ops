@@ -1,12 +1,15 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-function deleteUser(req, res) {
+const deleteUser = (req, res) => {
   const userId = req.body.userId;
 
   // Load existing users from the JSON file
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
   const filePath = path.join(__dirname, "../data/userData.json");
-  let users = require(filePath);
+  let users = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
   // Find the index of the user with the specified ID
   const userIndex = users.findIndex((user) => user.id === userId);
@@ -20,10 +23,11 @@ function deleteUser(req, res) {
   const deletedUser = users.splice(userIndex, 1)[0];
 
   // Write the updated user data back to the JSON file
-  fs.writeFileSync(filePath, JSON.stringify(users));
-  
-  res.redirect("/api/users")
-  console.log(deletedUser);
+  fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
+
+  // Redirect or respond as needed
+  res.redirect("/api/users");
+  console.log('Deleted user:', deletedUser);
 }
 
-module.exports = deleteUser;
+export default deleteUser;

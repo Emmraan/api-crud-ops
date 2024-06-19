@@ -1,7 +1,7 @@
 import users from '../data/userData.json' assert { type: 'json' };
 
 // Export a function that handles the route logic
-module.exports = function (req, res) {
+const readOneUser = (req, res) => {
   const userId = req.body.userId;
   // Find the user with the matching ID
   const user = users.find((user) => { //also work without return:  user.id === parseInt(userId);
@@ -18,3 +18,5 @@ module.exports = function (req, res) {
     res.render("user404");
   }
 };
+
+export default readOneUser;

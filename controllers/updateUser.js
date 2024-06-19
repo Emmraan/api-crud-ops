@@ -1,17 +1,23 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-function updateUser(req, res) {
+const updateUser = (req, res) => {
     const userId = req.body.userId;
     const updatedUserData = req.body;
 
-    // Validate the data
+    // Validate the data (assuming validateUserData function exists)
     if (!validateUserData(updatedUserData)) {
         return res.render("updateFieldMiss");
     }
 
     // Load existing users from the JSON file
-    const users = path.join(__dirname, "../data/userData.json");
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, "../data/userData.json");
+
+    // Read and parse JSON data
+    let users = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
     // Find the index of the user with the specified ID
     const userIndex = users.findIndex((user) => user.id === userId);
@@ -25,10 +31,12 @@ function updateUser(req, res) {
     users[userIndex] = { ...users[userIndex], ...updatedUserData };
 
     // Write the updated user data back to the JSON file
-    fs.writeFileSync(filePath, JSON.stringify(users));
+    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 
-    // Send the updated user as the response
+    // Redirect to a specific route after updating
     res.redirect("/api/users");
+
+    // Log the updated user data for debugging
     console.log(updatedUserData);
 }
 
@@ -38,4 +46,4 @@ function validateUserData(userData) {
     (field) => userData[field] !== undefined && userData[field].trim() !== "");
 }
 
-module.exports = updateUser;
+export default updateUser;

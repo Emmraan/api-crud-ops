@@ -1,7 +1,6 @@
-import app, { listen } from "./app";
+import app from "./app.js";
 import { createServer } from "http";
 const portsToTry = [3000, 4000, 8000, 8001, 8080, 5000, 5500];
-
 (async () => {
   for (const port of portsToTry) {
     const availablePort = await new Promise(resolve => {
@@ -12,7 +11,7 @@ const portsToTry = [3000, 4000, 8000, 8001, 8080, 5000, 5500];
     });
 
     if (typeof availablePort === 'number') {
-      listen(availablePort, () => console.log(`Server is running on http://localhost:${availablePort}`));
+      app.listen(availablePort, () => console.log(`Server is running on http://localhost:${availablePort}`));
       return;
     } else if (availablePort instanceof Error) {
       console.error(`Error while trying to listen on port ${port}:`, availablePort);
