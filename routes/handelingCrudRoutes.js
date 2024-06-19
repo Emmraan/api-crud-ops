@@ -1,6 +1,5 @@
-const express = require("express");
-
-const {createUser,readOneUser,updateUser,findUserForUpdate,deleteUser,} = require("../controllers/controllers");
+import express from 'express';
+import { createUser, readOneUser, updateUser, findUserForUpdate, deleteUser } from '../controllers/controllers';
 
 const router = express.Router();
 

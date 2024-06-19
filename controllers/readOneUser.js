@@ -1,4 +1,4 @@
-const users = require("../data/userData.json");
+import users from '../data/userData.json' assert { type: 'json' };
 
 // Export a function that handles the route logic
 module.exports = function (req, res) {

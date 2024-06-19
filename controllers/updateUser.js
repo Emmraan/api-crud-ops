@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import fs from 'fs';
+import path from 'path';
 
 function updateUser(req, res) {
     const userId = req.body.userId;
@@ -11,8 +11,7 @@ function updateUser(req, res) {
     }
 
     // Load existing users from the JSON file
-    const filePath = path.join(__dirname, "../data/userData.json");
-    const users = require(filePath);
+    const users = path.join(__dirname, "../data/userData.json");
 
     // Find the index of the user with the specified ID
     const userIndex = users.findIndex((user) => user.id === userId);

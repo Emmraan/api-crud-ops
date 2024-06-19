@@ -1,10 +1,10 @@
-const createUser = require("./createUser");
-const readOneUser  = require("./readOneUser");
-const updateUser = require("./updateUser");
-const findUserForUpdate = require("./findUserForUpdate");
-const deleteUser = require("./deleteUser");
+import createUser from "./createUser";
+import readOneUser from "./readOneUser";
+import updateUser from "./updateUser";
+import findUserForUpdate from "./findUserForUpdate";
+import deleteUser from "./deleteUser";
 
-module.exports = {
+export default {
   createUser,
   readOneUser,
   updateUser,

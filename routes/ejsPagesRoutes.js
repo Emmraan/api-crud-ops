@@ -1,5 +1,6 @@
-const express = require("express");
-const users = require("../data/userData.json");
+import express from 'express';
+import users from '../data/userData.json' assert { type: 'json' };
+
 const router = express.Router();
 
 router.get("/", (req, res) => res.render("Home"))

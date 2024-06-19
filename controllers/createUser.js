@@ -1,5 +1,5 @@
-const fs = require("fs");
-const users = require("../data/userData.json");
+import fs from 'fs';
+import users from '../data/userData.json' assert { type: 'json' };
 
 function createUser(req, res) {
   const { first_name, last_name, email, gender, job_title } = req.body;

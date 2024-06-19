@@ -1,8 +1,8 @@
-const express = require("express");
-const Middlewares = require("./middlewares/middlewares");
-const ejsRoutes = require("./routes/ejsPagesRoutes");
-const crudRoutes = require("./routes/handelingCrudRoutes");
-const route404 = require("./routes/404Route")
+import express from "express";
+import Middlewares from "./middlewares/middlewares";
+import ejsRoutes from "./routes/ejsPagesRoutes";
+import crudRoutes from "./routes/handelingCrudRoutes";
+import route404 from "./routes/404Route";
 
 const app = express();
 
@@ -23,4 +23,4 @@ app.use("/", ejsRoutes)
 .use("*", route404);
 
 
-module.exports = app;
+export default app;

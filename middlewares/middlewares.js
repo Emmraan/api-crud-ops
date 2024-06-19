@@ -1,6 +1,6 @@
-const express = require("express");
-const RateLimit = require("express-rate-limit");
-const path = require("path");
+import express from 'express';
+import RateLimit from 'express-rate-limit';
+import path from 'path';
 
 // Define middleware functions
 const jsonParser = express.json({ extended: true });
