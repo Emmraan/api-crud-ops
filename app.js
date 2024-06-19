@@ -1,4 +1,4 @@
-import express from "express";
+import express from "npm:express@4.19.2";
 import Middlewares from "./middlewares/middlewares.js";
 import ejsRoutes from "./routes/ejsPagesRoutes.js";
 import crudRoutes from "./routes/handelingCrudRoutes.js";
