@@ -1,8 +1,8 @@
 # Use an official Node.js runtime as the base image
 FROM node:18
 
-# Create a non-root user and set it as the current user
-RUN useradd -m appuser
+# Create a non-root user with UID in the range 10000-20000
+RUN useradd -m -u 10001 appuser
 
 # Set the working directory
 WORKDIR /app
